@@ -47,7 +47,7 @@ Pigeon = sprites.create(img("""
     .........................................
 """)),
 SpriteKind.player
-controller.move_sprite(Pigeon, 70, 0)
+controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -180,22 +180,22 @@ scene.set_tile_map(img("""
     ..............................
     ........e.e.e...........e.e.e.
     ........eeeee...........eeeee.
-    .........e.e.............e.e..
-    .........e.e.............e.e..
-    .........e.eeeeeeeeeeeeeee.e..
-    .........e.................e..
-    .........e.................e..
-    .......e.e.................e..
-    .........e.................e..
-    .....e...e.................e..
-    .........e.................e..
-    ...e.....eeeee.............e..
-    777777777fffff.............e77
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
+    .........ece.............ece..
+    .........ece.5...........ece..
+    .........eceeeeeeeeeeceeeece..
+    .........cccccccccccccccccce..
+    .........cccccccccccccccccce..
+    .......e.eeceeeeeeceeeeeecee..
+    .........eccccccceccccccccce..
+    .....e...eccccccceccccccccce..
+    .........e5cccccceccccccccce..
+    ...e.....eeeeeccce5cccccccce..
+    777777777fffffccceeeeeeeeeee77
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
 """))
 scene.set_tile(14,
     img("""
@@ -215,5 +215,29 @@ scene.set_tile(14,
         e e e e e e e d e e e e e e e e
         e e e e e e e d e e e e e e e e
         e e e e e e e d e e e e e e e e
+    """),
+    True)
+Pigeon.ay = 100
+def on_event_pressed():
+    Pigeon.set_velocity(0, -80)
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
+scene.set_tile(7,
+    img("""
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
     """),
     True)

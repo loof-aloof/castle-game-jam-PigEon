@@ -48,7 +48,7 @@ let Pigeon = sprites.create(img`
     .........................................
 `)
 SpriteKind.Player
-controller.moveSprite(Pigeon, 70, 0)
+controller.moveSprite(Pigeon, 50, 0)
 scene.cameraFollowSprite(Pigeon)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -181,22 +181,22 @@ scene.setTileMap(img`
     ..............................
     ........e.e.e...........e.e.e.
     ........eeeee...........eeeee.
-    .........e.e.............e.e..
-    .........e.e.............e.e..
-    .........e.eeeeeeeeeeeeeee.e..
-    .........e.................e..
-    .........e.................e..
-    .......e.e.................e..
-    .........e.................e..
-    .....e...e.................e..
-    .........e.................e..
-    ...e.....eeeee.............e..
-    777777777fffff.............e77
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
-    ffffffffffffff...fffffffffffff
+    .........ece.............ece..
+    .........ece.5...........ece..
+    .........eceeeeeeeeeeceeeece..
+    .........cccccccccccccccccce..
+    .........cccccccccccccccccce..
+    .......e.eeceeeeeeceeeeeecee..
+    .........eccccccceccccccccce..
+    .....e...eccccccceccccccccce..
+    .........e5cccccceccccccccce..
+    ...e.....eeeeeccce5cccccccce..
+    777777777fffffccceeeeeeeeeee77
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
+    ffffffffffffffcccfffffffffffff
 `)
 scene.setTile(14, img`
         e e e e d e e e e e e e e e e e
@@ -215,4 +215,26 @@ scene.setTile(14, img`
         e e e e e e e d e e e e e e e e
         e e e e e e e d e e e e e e e e
         e e e e e e e d e e e e e e e e
+    `, true)
+Pigeon.ay = 100
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+    Pigeon.setVelocity(0, -80)
+})
+scene.setTile(7, img`
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
+        e e e e e e e e e e e e e e e e
     `, true)
