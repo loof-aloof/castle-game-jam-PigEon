@@ -49,6 +49,7 @@ let Pigeon = sprites.create(img`
 `)
 SpriteKind.Player
 controller.moveSprite(Pigeon, 70, 0)
+scene.cameraFollowSprite(Pigeon)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -171,5 +172,47 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 `)
-tiles.setTilemap(tilemap`level`)
-tiles.setTilemap(tilemap`_1`)
+scene.setTileMap(img`
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ........e.e.e...........e.e.e.
+    ........eeeee...........eeeee.
+    .........e.e.............e.e..
+    .........e.e.............e.e..
+    .........e.eeeeeeeeeeeeeee.e..
+    .........e.................e..
+    .........e.................e..
+    .......e.e.................e..
+    .........e.................e..
+    .....e...e.................e..
+    .........e.................e..
+    ...e.....eeeee.............e..
+    777777777fffff.............e77
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+`)
+scene.setTile(14, img`
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        d d d d d d d d d d d d d d d d
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        d d d d d d d d d d d d d d d d
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+    `, true)

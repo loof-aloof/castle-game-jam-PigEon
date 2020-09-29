@@ -48,6 +48,7 @@ Pigeon = sprites.create(img("""
 """)),
 SpriteKind.player
 controller.move_sprite(Pigeon, 70, 0)
+scene.camera_follow_sprite(Pigeon)
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -170,5 +171,49 @@ scene.set_background_image(img("""
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 """))
-tiles.set_tilemap(tilemap("""level"""))
-tiles.set_tilemap(tilemap("""_1"""))
+scene.set_tile_map(img("""
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ..............................
+    ........e.e.e...........e.e.e.
+    ........eeeee...........eeeee.
+    .........e.e.............e.e..
+    .........e.e.............e.e..
+    .........e.eeeeeeeeeeeeeee.e..
+    .........e.................e..
+    .........e.................e..
+    .......e.e.................e..
+    .........e.................e..
+    .....e...e.................e..
+    .........e.................e..
+    ...e.....eeeee.............e..
+    777777777fffff.............e77
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+    ffffffffffffff...fffffffffffff
+"""))
+scene.set_tile(14,
+    img("""
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        e e e e d e e e e e e e e e e e
+        d d d d d d d d d d d d d d d d
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        e e e e e e e e e e e d e e e e
+        d d d d d d d d d d d d d d d d
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+        e e e e e e e d e e e e e e e e
+    """),
+    True)
