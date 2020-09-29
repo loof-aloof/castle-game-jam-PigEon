@@ -225,10 +225,10 @@ scene.set_tile(7,
     img("""
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
+        7 7 e 7 7 e 7 e 7 e 7 e e 7 e 7
+        7 e e 7 e e e e 7 e e 7 e 7 e e
+        7 e e e 7 e e e e e e 7 e 7 e e
+        7 e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e

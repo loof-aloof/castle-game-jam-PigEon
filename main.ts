@@ -223,10 +223,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() 
 scene.setTile(7, img`
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
+        7 7 e 7 7 e 7 e 7 e 7 e e 7 e 7
+        7 e e 7 e e e e 7 e e 7 e 7 e e
+        7 e e e 7 e e e e e e 7 e 7 e e
+        7 e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
