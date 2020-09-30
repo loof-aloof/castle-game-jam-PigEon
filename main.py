@@ -288,7 +288,6 @@ def on_update():
     if Pigeon.is_hitting_tile(CollisionDirection.BOTTOM):
         DBJ = True
 game.on_update(on_update)
-
 def on_event_pressed2():
     Pigeon.set_image(img("""
         ...............................
