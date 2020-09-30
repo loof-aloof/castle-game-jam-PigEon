@@ -18,18 +18,18 @@ Pigeon = sprites.create(img("""
     .........................................
     .........................................
     ...................bbbb..................
-    ..................bbbbbbb................
-    .................bbbbbfbbb...............
-    .................bbbbbbbbbb..............
-    .................bbbbbbbbbbb.............
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .............bbbbbbbbbbb.................
-    ..............bbbbbbbbbb.................
-    ...............bbbbbbbbb.................
+    ..................bbbbbb.................
+    ..................bbbbfbb................
+    ..................bbbbbbbb...............
+    ..................bbbbbbbbb..............
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..............bbbbbbbbb..................
+    ...............bbbbbbbb..................
     ................bbbbbbb..................
+    .................bbbbbb..................
     ..................bbbb...................
     ...................f.f...................
     ...................f.f...................
@@ -49,6 +49,21 @@ Pigeon = sprites.create(img("""
 SpriteKind.player
 controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
+Pigeon.ay = 100
+level = 1
+info.start_countdown(60)
+DBJ = True
+def on_event_pressed():
+    global DBJ
+    if DBJ:
+        Pigeon.set_velocity(0, -100)
+        DBJ = Pigeon.is_hitting_tile(CollisionDirection.BOTTOM)
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
+def on_update():
+    global DBJ
+    if Pigeon.is_hitting_tile(CollisionDirection.BOTTOM):
+        DBJ = True
+game.on_update(on_update)
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -181,21 +196,27 @@ scene.set_tile_map(img("""
     ........e.e.e...........e.e.e.
     ........eeeee...........eeeee.
     .........ece.............ece..
-    .........ece.5...........ece..
+    .........ece.............ece..
     .........eceeeeeeeeeeceeeece..
     .........cccccccccccccccccce..
     .........cccccccccccccccccce..
     .......e.eeceeeeeeceeeeeecee..
     .........eccccccceccccccccce..
     .....e...eccccccceccccccccce..
-    .........e5cccccceccccccccce..
-    ...e.....eeeeeccce5cccccccce..
-    777777777fffffccceeeeeeeeeee77
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
+    .........eccccccceccccccccce..
+    ...e.....eeeeeccceccccccccce..
+    777777777eeeeeccceeeeeeeceee77
+    fffffffffeccccccccccccceceffff
+    fffffffffeccccccccccccceceffff
+    fffffffffeeeeeccceccccceceffff
+    fffffffffffffeccceccccceceffff
+    fffffffffffffeccceccccceceffff
+    fffffffffffffeccceeeeeeeceeeee
+    fffffffffffffeccccccccceccccce
+    fffffffffffffeccccccccceccccae
+    fffffffffffffeeeeeeeeeeeeeeeee
+    ffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffff
 """))
 scene.set_tile(14,
     img("""
@@ -217,10 +238,6 @@ scene.set_tile(14,
         e e e e e e e d e e e e e e e e
     """),
     True)
-Pigeon.ay = 100
-def on_event_pressed():
-    Pigeon.set_velocity(0, -80)
-controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
 scene.set_tile(7,
     img("""
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
@@ -241,3 +258,46 @@ scene.set_tile(7,
         e e e e e e e e e e e e e e e e
     """),
     True)
+scene.set_tile(12,
+    img("""
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        f f f f f f f f f f f f f f f f
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        f f f f f f f f f f f f f f f f
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+    """),
+    False)
+scene.set_tile(10,
+    img("""
+        c c c c c a a a a c c c a a a c
+        c c a a a a c c a a a c c c a c
+        c a a c c c c c c c a a a c c a
+        c a c c c a a a a a c c a a c a
+        a a c c a c c c c c a c c a c a
+        a c c a c c a a a c c a c a c a
+        a c c a c a c c c a c a c a c a
+        a c c a c a c a c a c a c a c a
+        a c c a c a c c a c c a c a c a
+        a c c a c a c c c c a c c a c a
+        a c c a c c a a a a c c a c c a
+        a c c c a c c c c c c a c c a c
+        a c c c c a a a a a a a c c a c
+        c a a a c c c c c c c c a a a c
+        c c c a a a a a c c a a a c c c
+        c c c c c c c a a a a c c c c c
+    """),
+    False)
+def on_hit_tile(Pigeon):
+    level + 1
+scene.on_hit_tile(SpriteKind.player, 10, on_hit_tile)

@@ -19,18 +19,18 @@ let Pigeon = sprites.create(img`
     .........................................
     .........................................
     ...................bbbb..................
-    ..................bbbbbbb................
-    .................bbbbbfbbb...............
-    .................bbbbbbbbbb..............
-    .................bbbbbbbbbbb.............
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .................bbbbbbb.................
-    .............bbbbbbbbbbb.................
-    ..............bbbbbbbbbb.................
-    ...............bbbbbbbbb.................
+    ..................bbbbbb.................
+    ..................bbbbfbb................
+    ..................bbbbbbbb...............
+    ..................bbbbbbbbb..............
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..................bbbbb..................
+    ..............bbbbbbbbb..................
+    ...............bbbbbbbb..................
     ................bbbbbbb..................
+    .................bbbbbb..................
     ..................bbbb...................
     ...................f.f...................
     ...................f.f...................
@@ -50,6 +50,25 @@ let Pigeon = sprites.create(img`
 SpriteKind.Player
 controller.moveSprite(Pigeon, 50, 0)
 scene.cameraFollowSprite(Pigeon)
+Pigeon.ay = 100
+let level = 1
+info.startCountdown(60)
+let DBJ = true
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+    
+    if (DBJ) {
+        Pigeon.setVelocity(0, -100)
+        DBJ = Pigeon.isHittingTile(CollisionDirection.Bottom)
+    }
+    
+})
+game.onUpdate(function on_update() {
+    
+    if (Pigeon.isHittingTile(CollisionDirection.Bottom)) {
+        DBJ = true
+    }
+    
+})
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -182,21 +201,27 @@ scene.setTileMap(img`
     ........e.e.e...........e.e.e.
     ........eeeee...........eeeee.
     .........ece.............ece..
-    .........ece.5...........ece..
+    .........ece.............ece..
     .........eceeeeeeeeeeceeeece..
     .........cccccccccccccccccce..
     .........cccccccccccccccccce..
     .......e.eeceeeeeeceeeeeecee..
     .........eccccccceccccccccce..
     .....e...eccccccceccccccccce..
-    .........e5cccccceccccccccce..
-    ...e.....eeeeeccce5cccccccce..
-    777777777fffffccceeeeeeeeeee77
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
-    ffffffffffffffcccfffffffffffff
+    .........eccccccceccccccccce..
+    ...e.....eeeeeccceccccccccce..
+    777777777eeeeeccceeeeeeeceee77
+    fffffffffeccccccccccccceceffff
+    fffffffffeccccccccccccceceffff
+    fffffffffeeeeeccceccccceceffff
+    fffffffffffffeccceccccceceffff
+    fffffffffffffeccceccccceceffff
+    fffffffffffffeccceeeeeeeceeeee
+    fffffffffffffeccccccccceccccce
+    fffffffffffffeccccccccceccccae
+    fffffffffffffeeeeeeeeeeeeeeeee
+    ffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffff
 `)
 scene.setTile(14, img`
         e e e e d e e e e e e e e e e e
@@ -216,10 +241,6 @@ scene.setTile(14, img`
         e e e e e e e d e e e e e e e e
         e e e e e e e d e e e e e e e e
     `, true)
-Pigeon.ay = 100
-controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
-    Pigeon.setVelocity(0, -80)
-})
 scene.setTile(7, img`
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
         7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
@@ -238,3 +259,42 @@ scene.setTile(7, img`
         e e e e e e e e e e e e e e e e
         e e e e e e e e e e e e e e e e
     `, true)
+scene.setTile(12, img`
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        c c c c f c c c c c c c c c c c
+        f f f f f f f f f f f f f f f f
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        c c c c c c c c c c c f c c c c
+        f f f f f f f f f f f f f f f f
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+        c c c c c c c f c c c c c c c c
+    `, false)
+scene.setTile(10, img`
+        c c c c c a a a a c c c a a a c
+        c c a a a a c c a a a c c c a c
+        c a a c c c c c c c a a a c c a
+        c a c c c a a a a a c c a a c a
+        a a c c a c c c c c a c c a c a
+        a c c a c c a a a c c a c a c a
+        a c c a c a c c c a c a c a c a
+        a c c a c a c a c a c a c a c a
+        a c c a c a c c a c c a c a c a
+        a c c a c a c c c c a c c a c a
+        a c c a c c a a a a c c a c c a
+        a c c c a c c c c c c a c c a c
+        a c c c c a a a a a a a c c a c
+        c a a a c c c c c c c c a a a c
+        c c c a a a a a c c a a a c c c
+        c c c c c c c a a a a c c c c c
+    `, false)
+scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
+    level + 1
+})
