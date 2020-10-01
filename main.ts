@@ -182,7 +182,7 @@ scene.setTileMap(img`
     .........eccccccceccccccccce..
     .....e...eccccccceccccccccce..
     .........eccccccceccccccccce..
-    ...e.....eeeeeccceccccccccce..
+    .5.e.....eeeeeccceccccccccce..
     777777777eeeeeccceeeeeeeceee77
     fffffffffeccccccccccccceceffff
     fffffffffeccccccccccccceceffff
@@ -195,7 +195,26 @@ scene.setTileMap(img`
     fffffffffffffeeeeeeeeeeeeeeeee
     ffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffff
-    `)
+`)
+scene.setTile(5, img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `, false)
+scene.placeOnRandomTile(Pigeon, 5)
 scene.setTile(14, img`
         e e e e d e e e e e e e e e e e
         e e e e d e e e e e e e e e e e
@@ -357,7 +376,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function on_event_presse
 scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
     Pigeon.say("HIT")
     if (level == 1) {
-        game.reset()
         scene.setBackgroundImage(img`
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999

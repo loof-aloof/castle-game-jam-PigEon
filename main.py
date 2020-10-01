@@ -182,7 +182,7 @@ scene.set_tile_map(img("""
     .........eccccccceccccccccce..
     .....e...eccccccceccccccccce..
     .........eccccccceccccccccce..
-    ...e.....eeeeeccceccccccccce..
+    .5.e.....eeeeeccceccccccccce..
     777777777eeeeeccceeeeeeeceee77
     fffffffffeccccccccccccceceffff
     fffffffffeccccccccccccceceffff
@@ -195,7 +195,28 @@ scene.set_tile_map(img("""
     fffffffffffffeeeeeeeeeeeeeeeee
     ffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffff
-    """))
+"""))
+scene.set_tile(5,
+    img("""
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    """),
+    False)
+scene.place_on_random_tile(Pigeon, 5)
 scene.set_tile(14,
     img("""
         e e e e d e e e e e e e e e e e
@@ -361,7 +382,7 @@ controller.right.on_event(ControllerButtonEvent.PRESSED, on_event_pressed3)
 def on_hit_tile(Pigeon):
     Pigeon.say("HIT")
     if level == 1:
-        game.reset()
+        
         scene.set_background_image(img("""
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
