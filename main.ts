@@ -499,37 +499,56 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
         dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         `)
         scene.setTileMap(img`
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ........e.e.............e...e.
-        ........eeee............eeeee.
-        .........ece6............ece..
-        .........ece66..........6ece..
-        .........eceeeeceeeeeceeeece..
-        .........cccccccccccccccccce..
-        .........cccccccccccccccccce..
-        .......e.eeceeeeecceeeeeecee..
-        .........eccccccceccccccccce..
-        .....e...eccccccceccccccccce..
-        .........ecccccccecccccccc6e..
-        ...6....6eeeeecccecccccc666e..
-        777777777eeeeecccecceeeeceee77
-        fffffffffeccccccc6ccccceceffff
-        fffffffffe6cccccc6ccccceceffff
-        fffffffffeeeeeccceccccceccffff
-        fffffffffffffeccceccccceceffff
-        fffffffffffffeccce6cccceceffff
-        fffffffffffffeccceeeeee6ceeeee
-        fffffffffffffeccccccccceccccce
-        fffffffffffffe6cccccccceccccae
-        fffffffffffffeeeeeeeee666eeeee
-        ffffffffffffffffffffffffffffff
-        ffffffffffffffffffffffffffffff
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ........e.e.............e...e.
+            ........eeee............eeeee.
+            .........ece6............ece..
+            .........ece66..........6ece..
+            .........eceeeeceeeeeceeeece..
+            .........cccccccccccccccccce..
+            .........cccccccccccccccccce..
+            .......e.eeceeeeecceeeeeecee..
+            .........eccccccceccccccccce..
+            .....e...eccccccceccccccccce..
+            .........ecccccccecccccccc6e..
+            .5.6....6eeeeecccecccccc666e..
+            777777777eeeeecccecceeeeceee77
+            fffffffffeccccccc6ccccceceffff
+            fffffffffe6cccccc6ccccceceffff
+            fffffffffeeeeeccceccccceccffff
+            fffffffffffffeccceccccceceffff
+            fffffffffffffeccce6cccceceffff
+            fffffffffffffeccceeeeee6ceeeee
+            fffffffffffffeccccccccceccccce
+            fffffffffffffe6cccccccceccccae
+            fffffffffffffeeeeeeeee666eeeee
+            ffffffffffffffffffffffffffffff
+            ffffffffffffffffffffffffffffff
         `)
+        scene.setTile(5, img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        `, false)
+        scene.placeOnRandomTile(Pigeon, 5)
         scene.setTile(14, img`
         e e f e d e e e e f e e e e e e
         e f e e d e e e e f e e e e e e
@@ -547,6 +566,24 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
         e e f e e e e d e e f e e e e e
         e e f e e e e d e e f e e e e e
         e e e f e e e d e e e f e e e e
+        `, true)
+        scene.setTile(6, img`
+            . . . . . . . . . . f f f f . .
+            . . f f . f f f f f f f f f f .
+            . f f f f f f f f f f f f f f f
+            f f f f f f f f f c c c c c c c
+            f f f f f f f c c c c c c c c c
+            f f f f f c c c c c c c c c c c
+            f f f f c c c c c b b c c c c c
+            c c c c c c c c b b b c c c c c
+            c c c c c c b b b b b b c c c c
+            c c b b c b b b b b b b b c c c
+            c b b b b b b b d d b b b b b b
+            b b b b b b b d d d d b b b b b
+            b b d d d b b d d d d d d d b b
+            d d d d d d d d d d d d d d d d
+            d d d d d d d d d d d d d d d d
+            d d d d d d d d d d d d d d d d
         `, true)
         scene.setTile(7, img`
         d d d d d d d d d d d d d d d d
@@ -567,22 +604,22 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
         e e e e e e e e e e e e e e e e
         `, true)
         scene.setTile(12, img`
-        c c d c f c c c c d c c c c c c
-        c d c c f c c c c d c c c c c c
-        c c d c f c c c c c d c c c c c
-        c d c d f c c c c c d c c c c c
-        f d f d f f f f f d f f f f f f
-        c d c c c c c c d c d f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c d c c c c c d f d c c c
-        f f d f d f f f f f f d f f f f
-        c c c d c c c f c c c d c c c c
-        c c d c c c c f c c d c c c c c
-        c c d c c c c f c c d c c c c c
-        c c c d c c c f c c c d c c c c
+            c c b c f c c c c b c c c c c c
+            c b c c f c c c c b c c c c c c
+            c c b c f c c c c c b c c c c c
+            c b c b f c c c c c b c c c c c
+            f b f b f f f f f b f f f f f f
+            c b c c c c c c b c b f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c b c c c c c b f b c c c
+            f f b f b f f f f f f b f f f f
+            c c c b c c c f c c c b c c c c
+            c c b c c c c f c c b c c c c c
+            c c b c c c c f c c b c c c c c
+            c c c b c c c f c c c b c c c c
         `, false)
         scene.setTile(10, img`
             c c c c c a a a a c c c a a a c

@@ -382,7 +382,6 @@ controller.right.on_event(ControllerButtonEvent.PRESSED, on_event_pressed3)
 def on_hit_tile(Pigeon):
     Pigeon.say("HIT")
     if level == 1:
-        
         scene.set_background_image(img("""
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -506,37 +505,58 @@ def on_hit_tile(Pigeon):
         dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         """))
         scene.set_tile_map(img("""
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ..............................
-        ........e.e.............e...e.
-        ........eeee............eeeee.
-        .........ece6............ece..
-        .........ece66..........6ece..
-        .........eceeeeceeeeeceeeece..
-        .........cccccccccccccccccce..
-        .........cccccccccccccccccce..
-        .......e.eeceeeeecceeeeeecee..
-        .........eccccccceccccccccce..
-        .....e...eccccccceccccccccce..
-        .........ecccccccecccccccc6e..
-        ...6....6eeeeecccecccccc666e..
-        777777777eeeeecccecceeeeceee77
-        fffffffffeccccccc6ccccceceffff
-        fffffffffe6cccccc6ccccceceffff
-        fffffffffeeeeeccceccccceccffff
-        fffffffffffffeccceccccceceffff
-        fffffffffffffeccce6cccceceffff
-        fffffffffffffeccceeeeee6ceeeee
-        fffffffffffffeccccccccceccccce
-        fffffffffffffe6cccccccceccccae
-        fffffffffffffeeeeeeeee666eeeee
-        ffffffffffffffffffffffffffffff
-        ffffffffffffffffffffffffffffff
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ..............................
+            ........e.e.............e...e.
+            ........eeee............eeeee.
+            .........ece6............ece..
+            .........ece66..........6ece..
+            .........eceeeeceeeeeceeeece..
+            .........cccccccccccccccccce..
+            .........cccccccccccccccccce..
+            .......e.eeceeeeecceeeeeecee..
+            .........eccccccceccccccccce..
+            .....e...eccccccceccccccccce..
+            .........ecccccccecccccccc6e..
+            .5.6....6eeeeecccecccccc666e..
+            777777777eeeeecccecceeeeceee77
+            fffffffffeccccccc6ccccceceffff
+            fffffffffe6cccccc6ccccceceffff
+            fffffffffeeeeeccceccccceccffff
+            fffffffffffffeccceccccceceffff
+            fffffffffffffeccce6cccceceffff
+            fffffffffffffeccceeeeee6ceeeee
+            fffffffffffffeccccccccceccccce
+            fffffffffffffe6cccccccceccccae
+            fffffffffffffeeeeeeeee666eeeee
+            ffffffffffffffffffffffffffffff
+            ffffffffffffffffffffffffffffff
         """))
+        scene.set_tile(5,
+        img("""
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        """),
+        False)
+        scene.place_on_random_tile(Pigeon, 5)
         scene.set_tile(14,
         img("""
         e e f e d e e e e f e e e e e e
@@ -555,6 +575,26 @@ def on_hit_tile(Pigeon):
         e e f e e e e d e e f e e e e e
         e e f e e e e d e e f e e e e e
         e e e f e e e d e e e f e e e e
+        """),
+        True)
+        scene.set_tile(6,
+        img("""
+            . . . . . . . . . . f f f f . .
+            . . f f . f f f f f f f f f f .
+            . f f f f f f f f f f f f f f f
+            f f f f f f f f f c c c c c c c
+            f f f f f f f c c c c c c c c c
+            f f f f f c c c c c c c c c c c
+            f f f f c c c c c b b c c c c c
+            c c c c c c c c b b b c c c c c
+            c c c c c c b b b b b b c c c c
+            c c b b c b b b b b b b b c c c
+            c b b b b b b b d d b b b b b b
+            b b b b b b b d d d d b b b b b
+            b b d d d b b d d d d d d d b b
+            d d d d d d d d d d d d d d d d
+            d d d d d d d d d d d d d d d d
+            d d d d d d d d d d d d d d d d
         """),
         True)
         scene.set_tile(7,
@@ -579,22 +619,22 @@ def on_hit_tile(Pigeon):
         True)
         scene.set_tile(12,
         img("""
-        c c d c f c c c c d c c c c c c
-        c d c c f c c c c d c c c c c c
-        c c d c f c c c c c d c c c c c
-        c d c d f c c c c c d c c c c c
-        f d f d f f f f f d f f f f f f
-        c d c c c c c c d c d f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c c c c c c c c f c c c c
-        c c c c d c c c c c d f d c c c
-        f f d f d f f f f f f d f f f f
-        c c c d c c c f c c c d c c c c
-        c c d c c c c f c c d c c c c c
-        c c d c c c c f c c d c c c c c
-        c c c d c c c f c c c d c c c c
+            c c b c f c c c c b c c c c c c
+            c b c c f c c c c b c c c c c c
+            c c b c f c c c c c b c c c c c
+            c b c b f c c c c c b c c c c c
+            f b f b f f f f f b f f f f f f
+            c b c c c c c c b c b f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c c c c c c c c f c c c c
+            c c c c b c c c c c b f b c c c
+            f f b f b f f f f f f b f f f f
+            c c c b c c c f c c c b c c c c
+            c c b c c c c f c c b c c c c c
+            c c b c c c c f c c b c c c c c
+            c c c b c c c f c c c b c c c c
         """),
         False)
         scene.set_tile(10,
