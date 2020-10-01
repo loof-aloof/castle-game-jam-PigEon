@@ -537,22 +537,22 @@ def on_hit_tile(Pigeon):
         """))
         scene.set_tile(5,
         img("""
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
         """),
         False)
         scene.place_on_random_tile(Pigeon, 5)
@@ -682,22 +682,22 @@ def on_hit_tile(Pigeon):
         scene.place_on_random_tile(Pigeon, 5)
         scene.set_tile(14,
         img("""
-        e e f e d e e e e f e e e e e e
-        e f e e d e e e e f e e e e e e
-        e e f e d e e e e e f e e e e e
-        e f e f d e e e e e f e e e e e
-        d f d f d d d d d f d d d d d d
-        e f e e e e e e f e f d e e e e
-        e e e e e e e e e e e d e e e e
-        e e e e e e e e e e e d e e e e
-        e e e e e e e e e e e d e e e e
-        e e e e e e e e e e e d e e e e
-        e e e e f e e e e e f d f e e e
-        d d f d f d d d d d d f d d d d
-        e e e f e e e d e e e f e e e e
-        e e f e e e e d e e f e e e e e
-        e e f e e e e d e e f e e e e e
-        e e e f e e e d e e e f e e e e
+            7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+            7 f 7 7 7 e 7 7 7 7 e 7 7 e 7 7
+            7 e f e 7 e e 7 e 7 f 7 7 e 7 7
+            e f e f b e e e e e f 7 e e e 7
+            b f b f b b b b b f b b b b b b
+            e f e e e e e e f e f b e e e e
+            e e e e e e e e e e e b e e e e
+            e e e e e e e e e e e b e e e e
+            e e e e e e e e e e e b e e e e
+            e e e e e e e e e e e b e e e e
+            e e e e f e e e e e f b f e e e
+            b b f b f b b b b b b f b b b b
+            e e e f e e e b e e e f e e e e
+            e e f 7 e e e b 7 e f 7 e e 7 e
+            7 e 7 7 7 e e 7 7 e 7 7 7 e 7 7
+            7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
         """),
         True)
         scene.set_tile(6,
@@ -716,48 +716,48 @@ def on_hit_tile(Pigeon):
             b b b b b b b d d d d b b b b b
             b b d d d b b d d d d d d d b b
             d d d d d d d d d d d d d d d d
-            d d d d d d d d d d d d d d d d
-            d d d d d d d d d d d d d d d d
+            d 7 7 d d d d d 7 7 d d d d d d
+            7 7 7 7 d d d 7 7 7 7 7 d d d d
         """),
         True)
         scene.set_tile(7,
         img("""
-        d d d d d d d d d d d d d d d d
-        d d d d d d d d d d d d d d d d
-        d d e d d e d e d e d e e d e d
-        d e e d e e e e d e e d e d e e
-        d e e e d e e e e e e d e d e e
-        d e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
+            7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+            7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+            7 7 e 7 7 e 7 e 7 e 7 e e 7 e 7
+            7 e e 7 e e 7 e 7 e e 7 e 7 e 7
+            7 e e e 7 e e e 7 e e 7 e 7 e 7
+            7 e e e 7 e e e 7 e e 7 e 7 e e
+            7 e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
         """),
         True)
         scene.set_tile(12,
         img("""
-            c c b c f c c c c b c c c c c c
-            c b c c f c c c c b c c c c c c
-            c c b c f c c c c c b c c c c c
-            c b c b f c c c c c b c c c c c
-            f b f b f f f f f b f f f f f f
-            c b c c c c c c b c b f c c c c
+            e e e e e e e e e e e e e e e e
+            e e e e e e e e e e e e e e e e
+            e c b e e e e e e e e e c e e e
+            e b c e f c c c c c e e c e e e
+            f b f b f f f f f b e f f f e e
+            c b c c c c c c b c b f c c c e
             c c c c c c c c c c c f c c c c
             c c c c c c c c c c c f c c c c
             c c c c c c c c c c c f c c c c
             c c c c c c c c c c c f c c c c
             c c c c b c c c c c b f b c c c
             f f b f b f f f f f f b f f f f
-            c c c b c c c f c c c b c c c c
-            c c b c c c c f c c b c c c c c
-            c c b c c c c f c c b c c c c c
-            c c c b c c c f c c c b c c c c
+            c c c b c c c f c e c b c c c e
+            e c b c c e c f e e b e c c e e
+            e e b c c e e f e e b e e c e e
+            e e e e e e e e e e e e e e e e
         """),
         False)
         scene.set_tile(10,
@@ -782,9 +782,9 @@ def on_hit_tile(Pigeon):
         True)
         scene.set_tile(3,
         img("""
-            c c c c c c c c c c c c c c c c
-            c c c c c c c 1 2 3 5 c c c c c
-            c c c c c 5 3 2 1 3 c c c c c c
+            e e c c c c c c c c c c c c e e
+            e c c c c c c 1 2 3 5 c c c c e
+            c c c c c 5 3 2 1 3 c c c c c e
             c c c c c c 3 1 2 3 c c c c c c
             c c c c c c 3 2 1 3 c c c c c c
             c c c c c c 3 3 3 3 c c c c c c
@@ -795,32 +795,32 @@ def on_hit_tile(Pigeon):
             c 7 7 c c c 7 7 7 7 c c c 7 7 7
             c c c c c c c 7 7 7 c c c c c 7
             c c c c c c c 7 7 7 c c c c c c
-            c c c c c e 7 7 e 7 7 e c c c c
-            c c e e e e 7 e e e 7 7 e e e c
+            c c c c c 7 7 7 e 7 7 7 c c c c
+            c c e e 7 7 7 e e e 7 7 7 e e c
             e e e e e e e e e e e e e e e e
         """),
         True)
+        scene.set_tile(5,
         img("""
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
         """),
         False)
         info.start_countdown(30)
-        level = 2
 scene.on_hit_tile(SpriteKind.player, 10, on_hit_tile)
 def on_hit_tile2(Pigeon):
     scene.place_on_random_tile(Pigeon, 5)
