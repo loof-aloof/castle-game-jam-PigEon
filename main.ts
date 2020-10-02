@@ -971,5 +971,10 @@ scene.onHitTile(SpriteKind.Player, 3, function on_hit_tile2(Pigeon: Sprite) {
     info.startCountdown(30)
 })
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile4(Pigeon: Sprite) {
-    game.over(true)
+    if (game.runtime() < 80000) {
+        game.over(true, effects.confetti)
+    } else {
+        game.over(true, effects.bubbles)
+    }
+    
 })

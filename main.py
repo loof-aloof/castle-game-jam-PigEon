@@ -1007,5 +1007,8 @@ def on_hit_tile2(Pigeon):
     info.start_countdown(30)
 scene.on_hit_tile(SpriteKind.player, 3, on_hit_tile2)
 def on_hit_tile4(Pigeon):
-    game.over(True)
+    if game.runtime()< 80000:
+        game.over(True, effects.confetti)
+    else:
+        game.over(True, effects.bubbles)
 scene.on_hit_tile(SpriteKind.player, 13, on_hit_tile4)
