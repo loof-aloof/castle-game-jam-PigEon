@@ -41,9 +41,9 @@ controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
 Pigeon.ay = 100
 level = 1
-game.splash("A pigeon has been lost in time", "Get to the time warp in the castle!")
-game.splash("The way there may change over the years...")
-game.splash("Year: 942", "Our castle rests on a hill.")
+game.splash("A pigeon has been lost in time!", "Get to the time warp in the castle!")
+game.splash("The way there may change over the years", "What was once right may now be wrong!")
+game.splash("Year: 942", "The castle rests on a hill.")
 info.start_countdown(60)
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -194,7 +194,7 @@ scene.set_tile_map(img("""
     fffffffffffffeccceccccceceffff
     fffffffffffffeccceeeeeeeceeeee
     fffffffffffffeccccccccceccccce
-    fffffffffffffeccccccccceccccae
+    fffffffffffffecccccccc3eccccae
     fffffffffffffeeeeeeeeeeeeeeeee
     ffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffff
@@ -300,6 +300,26 @@ scene.set_tile(10,
         c c c c c c c a a a a c c c c c
     """),
     True)
+scene.set_tile(3,
+        img("""
+            c c c c c c c c c c c c c c c c
+            c c c c c c c 1 2 3 5 c c c c c
+            c c c c c 5 3 2 1 3 c c c c c c
+            c c c c c c 3 1 2 3 c c c c c c
+            c c c c c c 3 2 1 3 c c c c c c
+            c c c c c c 3 3 3 3 c c c c c c
+            c c c c c c c c 7 c c c c c c c
+            c c c c 7 7 7 c 7 c 7 7 7 c c c
+            c c c 7 7 7 7 7 7 7 7 7 7 7 c c
+            c c 7 7 7 7 7 7 7 7 7 c 7 7 7 c
+            c 7 7 c c c 7 7 7 7 c c c 7 7 7
+            c c c c c c c 7 7 7 c c c c c 7
+            c c c c c c c 7 7 7 c c c c c c
+            c c c c c e 7 7 e 7 7 e c c c c
+            c c e e e e 7 e e e 7 7 e e e c
+            e e e e e e e e e e e e e e e e
+        """),
+        True)
 DBJ = True
 def on_event_pressed():
     global DBJ
