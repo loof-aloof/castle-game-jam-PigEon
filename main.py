@@ -3,6 +3,9 @@ Title: PigEons
 Creator: Daniel
 Description: A pigeon has fallen into a time warp
 """
+level = 1
+game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
+game.splash("Year: 942", "The castle rests on a hill.")
 Pigeon = sprites.create(img("""
     ...............................
     ...............................
@@ -40,9 +43,6 @@ SpriteKind.player)
 controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
 Pigeon.ay = 100
-level = 1
-game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
-game.splash("Year: 942", "The castle rests on a hill.")
 info.start_countdown(60)
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999

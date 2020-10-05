@@ -4,6 +4,9 @@ Creator: Daniel
 Description: A pigeon has fallen into a time warp
 
  */
+let level = 1
+game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
+game.splash("Year: 942", "The castle rests on a hill.")
 let Pigeon = sprites.create(img`
     ...............................
     ...............................
@@ -40,9 +43,6 @@ let Pigeon = sprites.create(img`
 controller.moveSprite(Pigeon, 50, 0)
 scene.cameraFollowSprite(Pigeon)
 Pigeon.ay = 100
-let level = 1
-game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
-game.splash("Year: 942", "The castle rests on a hill.")
 info.startCountdown(60)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
