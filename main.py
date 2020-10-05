@@ -699,7 +699,7 @@ def on_hit_tile(Pigeon):
         """),
         True)
         level = 2
-        info.start_countdown(30)        
+        info.start_countdown(40)        
 scene.on_hit_tile(SpriteKind.player, 10, on_hit_tile)
 def on_hit_tile3(Pigeon):
     game.splash("Year: 1402", "The castle is infested with plants!")

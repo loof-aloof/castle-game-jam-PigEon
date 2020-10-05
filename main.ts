@@ -677,7 +677,7 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
             e e e e e e e e e e e e e e e e
         `, true)
     let level = 2
-    info.startCountdown(30)
+    info.startCountdown(40)
 })
 scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
     game.splash("Year: 1402", "The castle is infested with plants!")
