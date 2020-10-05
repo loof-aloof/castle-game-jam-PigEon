@@ -4,9 +4,10 @@ Creator: Daniel
 Description: A pigeon has fallen into a time warp
 
  */
-let level = 1
+// Game start text
 game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
 game.splash("Year: 942", "The castle rests on a hill.")
+// Pigeon
 let Pigeon = sprites.create(img`
     ...............................
     ...............................
@@ -40,10 +41,14 @@ let Pigeon = sprites.create(img`
     ...............................
     ...............................
 `, SpriteKind.Player)
+// Movement
 controller.moveSprite(Pigeon, 50, 0)
 scene.cameraFollowSprite(Pigeon)
+// Gravity
 Pigeon.ay = 100
+// Countdown
 info.startCountdown(60)
+// First level map
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -308,6 +313,8 @@ scene.setTile(3, img`
             e e e e e e e e e e e e e e e e
         `, true)
 let DBJ = true
+let level = 1
+// Double and single jumping
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
     
     if (DBJ) {
@@ -323,6 +330,7 @@ game.onUpdate(function on_update() {
     }
     
 })
+// Changing direction
 controller.left.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed2() {
     Pigeon.setImage(img`
         ...............................
@@ -393,6 +401,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function on_event_presse
         ...............................
     `)
 })
+// Switch to level 2 map
 scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
     game.splash("Year: 1235", "Carnivorous plants have grown! Beware!")
     scene.setBackgroundImage(img`
@@ -679,6 +688,7 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
     let level = 2
     info.startCountdown(40)
 })
+// Switch to level 3 map
 scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
     game.splash("Year: 1402", "The castle is infested with plants!")
     scene.setBackgroundImage(img`
@@ -965,10 +975,12 @@ scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
     let level = 3
     info.startCountdown(30)
 })
+// Death on plant
 scene.onHitTile(SpriteKind.Player, 3, function on_hit_tile2(Pigeon: Sprite) {
     scene.placeOnRandomTile(Pigeon, 5)
     info.startCountdown(30)
 })
+// Win
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile4(Pigeon: Sprite) {
     if (game.runtime() < 80000) {
         game.over(true, effects.confetti)

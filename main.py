@@ -3,9 +3,10 @@ Title: PigEons
 Creator: Daniel
 Description: A pigeon has fallen into a time warp
 """
-level = 1
+#Game start text
 game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
 game.splash("Year: 942", "The castle rests on a hill.")
+#Pigeon
 Pigeon = sprites.create(img("""
     ...............................
     ...............................
@@ -40,10 +41,14 @@ Pigeon = sprites.create(img("""
     ...............................
 """),
 SpriteKind.player)
+#Movement
 controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
+#Gravity
 Pigeon.ay = 100
+#Countdown
 info.start_countdown(60)
+#First level map
 scene.set_background_image(img("""
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -320,6 +325,8 @@ scene.set_tile(3,
         """),
         True)
 DBJ = True
+level = 1
+#Double and single jumping
 def on_event_pressed():
     global DBJ
     if DBJ:
@@ -331,6 +338,7 @@ def on_update():
     if Pigeon.is_hitting_tile(CollisionDirection.BOTTOM):
         DBJ = True
 game.on_update(on_update)
+#Changing direction
 def on_event_pressed2():
     Pigeon.set_image(img("""
         ...............................
@@ -401,6 +409,7 @@ def on_event_pressed3():
         ...............................
     """))
 controller.right.on_event(ControllerButtonEvent.PRESSED, on_event_pressed3)
+#Switch to level 2 map
 def on_hit_tile(Pigeon):
         game.splash("Year: 1235", "Carnivorous plants have grown! Beware!")
         scene.set_background_image(img("""
@@ -701,6 +710,7 @@ def on_hit_tile(Pigeon):
         level = 2
         info.start_countdown(40)        
 scene.on_hit_tile(SpriteKind.player, 10, on_hit_tile)
+#Switch to level 3 map
 def on_hit_tile3(Pigeon):
     game.splash("Year: 1402", "The castle is infested with plants!")
     scene.set_background_image(img("""
@@ -1001,10 +1011,12 @@ def on_hit_tile3(Pigeon):
     level = 3
     info.start_countdown(30)        
 scene.on_hit_tile(SpriteKind.player, 11, on_hit_tile3)
+#Death on plant
 def on_hit_tile2(Pigeon):
     scene.place_on_random_tile(Pigeon, 5)
     info.start_countdown(30)
 scene.on_hit_tile(SpriteKind.player, 3, on_hit_tile2)
+#Win
 def on_hit_tile4(Pigeon):
     if game.runtime()< 80000:
         game.over(True, effects.confetti)
