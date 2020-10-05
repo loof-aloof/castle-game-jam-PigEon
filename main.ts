@@ -937,10 +937,10 @@ scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
             e e e e e e e e e e e e e e e e
         `, false)
     scene.setTile(13, img`
-            c c c c c a a a a c c c a a a c
-            c c a a a a c c a a a c c c a c
-            c a a c c c c c c c a a a c c a
-            c a c c c a a a a a c c a a c a
+            e e e e e a a a a c c c a a a e
+            e e a a a a c c a a a c c c a e
+            e a a c c c c c c c a a a c c a
+            e a c c c a a a a a c c a a c a
             a a c c a c c c c c a c c a c a
             a c c a c c a a a c c a c a c a
             a c c a c a c c c a c a c a c a
@@ -948,11 +948,11 @@ scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
             a c c a c a c c a c c a c a c a
             a c c a c a c c c c a c c a c a
             a c c a c c a a a a c c a c c a
-            a c c c a c c c c c c a c c a c
-            a c c c c a a a a a a a c c a c
-            c a a a c c c c c c c c a a a c
-            c c c a a a a a c c a a a c c c
-            c c c c c c c a a a a c c c c c
+            a c c c a c c c c c c a c c a e
+            a c c c c a a a a a a a c c a e
+            e a a a c c c c c c c c a a a e
+            e e e a a a a a c c a a a e e e
+            e e e e e e e a a a a e e e e e
         `, true)
     scene.setTile(3, img`
             e e e e c c c c c c c c e e e e

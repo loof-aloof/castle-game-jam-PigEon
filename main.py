@@ -970,10 +970,10 @@ def on_hit_tile3(Pigeon):
         False)
     scene.set_tile(13,
         img("""
-            c c c c c a a a a c c c a a a c
-            c c a a a a c c a a a c c c a c
-            c a a c c c c c c c a a a c c a
-            c a c c c a a a a a c c a a c a
+            e e e e e a a a a c c c a a a e
+            e e a a a a c c a a a c c c a e
+            e a a c c c c c c c a a a c c a
+            e a c c c a a a a a c c a a c a
             a a c c a c c c c c a c c a c a
             a c c a c c a a a c c a c a c a
             a c c a c a c c c a c a c a c a
@@ -981,11 +981,11 @@ def on_hit_tile3(Pigeon):
             a c c a c a c c a c c a c a c a
             a c c a c a c c c c a c c a c a
             a c c a c c a a a a c c a c c a
-            a c c c a c c c c c c a c c a c
-            a c c c c a a a a a a a c c a c
-            c a a a c c c c c c c c a a a c
-            c c c a a a a a c c a a a c c c
-            c c c c c c c a a a a c c c c c
+            a c c c a c c c c c c a c c a e
+            a c c c c a a a a a a a c c a e
+            e a a a c c c c c c c c a a a e
+            e e e a a a a a c c a a a e e e
+            e e e e e e e a a a a e e e e e
         """),
         True)
     scene.set_tile(3,
