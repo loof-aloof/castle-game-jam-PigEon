@@ -1,6 +1,6 @@
 """
 Title: PigEons
-Creators: Daniel
+Creator: Daniel
 Description: A pigeon has fallen into a time warp
 """
 Pigeon = sprites.create(img("""
@@ -41,8 +41,7 @@ controller.move_sprite(Pigeon, 50, 0)
 scene.camera_follow_sprite(Pigeon)
 Pigeon.ay = 100
 level = 1
-game.splash("A pigeon has been lost in time!", "Get to the time warp in the castle!")
-game.splash("The way there may change over the years", "What was once right may now be wrong!")
+game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
 game.splash("Year: 942", "The castle rests on a hill.")
 info.start_countdown(60)
 scene.set_background_image(img("""
@@ -1010,5 +1009,5 @@ def on_hit_tile4(Pigeon):
     if game.runtime()< 80000:
         game.over(True, effects.confetti)
     else:
-        game.over(True, effects.bubbles)
+        game.over(True, effects.splatter)
 scene.on_hit_tile(SpriteKind.player, 13, on_hit_tile4)

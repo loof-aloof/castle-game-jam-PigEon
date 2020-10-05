@@ -1,6 +1,6 @@
 /** 
 Title: PigEons
-Creators: Daniel
+Creator: Daniel
 Description: A pigeon has fallen into a time warp
 
  */
@@ -41,8 +41,7 @@ controller.moveSprite(Pigeon, 50, 0)
 scene.cameraFollowSprite(Pigeon)
 Pigeon.ay = 100
 let level = 1
-game.splash("A pigeon has been lost in time!", "Get to the time warp in the castle!")
-game.splash("The way there may change over the years", "What was once right may now be wrong!")
+game.splash("Get to the time warp in the castle!", "The way there may change over the years!")
 game.splash("Year: 942", "The castle rests on a hill.")
 info.startCountdown(60)
 scene.setBackgroundImage(img`
@@ -974,7 +973,7 @@ scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile4(Pigeon: Sprite) {
     if (game.runtime() < 80000) {
         game.over(true, effects.confetti)
     } else {
-        game.over(true, effects.bubbles)
+        game.over(true, effects.splatter)
     }
     
 })
