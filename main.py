@@ -560,7 +560,7 @@ def on_hit_tile(Pigeon):
             fffffffffffffeccceccccceceffff
             fffffffffffffeccce63ccceceffff
             fffffffffffffeccceeeeee6ceeeee
-            fffffffffffffeccccccccccccccce
+            fffffffffffffe6cccccccccccccce
             fffffffffffffe63ccccccccccccbe
             fffffffffffffeeeeeeeee666eeeee
             ffffffffffffffffffffffffffffff
@@ -861,7 +861,7 @@ def on_hit_tile3(Pigeon):
         fffffffffffffeccceccccceceffff
         fffffffffffffeccce63ccceceffff
         fffffffffffffeccceee6ee6ceeeee
-        fffffffffffffeccccc66cccccccce
+        fffffffffffffe6cccc66cccccccce
         fffffffffffffe63cc6666ccccccde
         fffffffffffffeeeeeeeee666eeeee
         ffffffffffffffffffffffffffffff
