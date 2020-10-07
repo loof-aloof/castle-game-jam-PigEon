@@ -325,7 +325,6 @@ scene.set_tile(3,
         """),
         True)
 DBJ = True
-level = 1
 #Double and single jumping
 def on_event_pressed():
     global DBJ
@@ -707,7 +706,6 @@ def on_hit_tile(Pigeon):
             e e e e e e e e e e e e e e e e
         """),
         True)
-        level = 2
         info.start_countdown(40)        
 scene.on_hit_tile(SpriteKind.player, 10, on_hit_tile)
 #Switch to level 3 map
@@ -1008,7 +1006,6 @@ def on_hit_tile3(Pigeon):
             e e e e e e e e e e e e e e e e
         """),
         True)
-    level = 3
     info.start_countdown(30)        
 scene.on_hit_tile(SpriteKind.player, 11, on_hit_tile3)
 #Death on plant

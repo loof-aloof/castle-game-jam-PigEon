@@ -313,7 +313,6 @@ scene.setTile(3, img`
             e e e e e e e e e e e e e e e e
         `, true)
 let DBJ = true
-let level = 1
 // Double and single jumping
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
     
@@ -685,7 +684,6 @@ scene.onHitTile(SpriteKind.Player, 10, function on_hit_tile(Pigeon: Sprite) {
             c c e e e e 7 e e e 7 7 e e e c
             e e e e e e e e e e e e e e e e
         `, true)
-    let level = 2
     info.startCountdown(40)
 })
 // Switch to level 3 map
@@ -972,7 +970,6 @@ scene.onHitTile(SpriteKind.Player, 11, function on_hit_tile3(Pigeon: Sprite) {
             c c e 7 7 7 7 e e e 7 7 7 7 7 c
             e e e e e e e e e e e e e e e e
         `, true)
-    let level = 3
     info.startCountdown(30)
 })
 // Death on plant
